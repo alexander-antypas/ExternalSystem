@@ -8,7 +8,7 @@
 
 		<!-- JDBC Database connection settings -->
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql://db4free.net:3306/transfer_1</property>
+		<property name="connection.url">jdbc:mysql://db4free.net:3307/transfer_1</property>
 		<property name="connection.username">it21672</property>
 		<property name="connection.password">hzyo3ag6</property>
 

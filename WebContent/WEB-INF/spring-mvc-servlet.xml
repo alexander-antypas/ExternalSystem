@@ -41,7 +41,7 @@
 		destroy-method="close">
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
 		<property name="jdbcUrl"
-			value="jdbc:mysql://db4free.net:3306/transfer_1" />
+			value="jdbc:mysql://db4free.net:3307/transfer_1" />
 		<property name="user" value="it21672" />
 		<property name="password" value="hzyo3ag6" />
 
