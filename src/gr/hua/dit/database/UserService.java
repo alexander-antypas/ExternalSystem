@@ -1,12 +1,14 @@
 package gr.hua.dit.database;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import gr.hua.dit.classes.Application;
+import gr.hua.dit.classes.External_Department;
 //import gr.hua.dit.classes.External_Department;
 import gr.hua.dit.classes.External_User;
 import gr.hua.dit.classes.authorities;
@@ -95,7 +97,7 @@ public class UserService {
 		}
 		
 	}
-/*	
+
 	public static List<External_Department> showDepartments() {
 
 		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
@@ -120,7 +122,7 @@ public class UserService {
 		} finally {
 			factory.close();
 		}
-	}*/
+	}
 	
 //////CHECK APP
 	public static String check(String id) {

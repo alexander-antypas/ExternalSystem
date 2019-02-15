@@ -61,7 +61,7 @@ public class DemoAppConfig implements WebMvcConfigurer{
 		.and()
 		.formLogin()
 		.loginPage("/signin")
-		.loginProcessingUrl("/authUser")
+		.loginProcessingUrl("/ExternalSystem/authUser")
 		.defaultSuccessUrl("/definer", true)
 		.failureUrl("/denied")
 		.permitAll()

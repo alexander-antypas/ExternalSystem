@@ -12,7 +12,6 @@
 <script>
 
 document.getElementById('add').addEventListener('click',function(){
-    var xhr = new XMLHttpRequest();
 	//SAVE DTATA FROM FORM
     var username = document.getElementById("username").value;// USERNAME
     var surname = document.getElementById("surname").value;//// SURNAME
@@ -25,25 +24,34 @@ document.getElementById('add').addEventListener('click',function(){
     var yoe = document.getElementById("yoe").value;//////////// YEAR OF ENROLLMENT
     var pro = 0;/////////////////////////////////////////////// PROGRESS
     
-    var enabled = 1;
-    
     var d = new Date();
     var yeartoday = d.getFullYear();
     var sem = (yeartoday-yoe)*2-1 ;/////////////////////// SEMESTER
     
-    var External_user = '{"username":'+username+',"surname":'+surname+',"id":'+id+',"password":'+password+',"university":'+university+',"year":'+year+',"age":'+age+',"email":'+email+', "yoe":'+yoe+', "pro":'+pro+'}' ; 
-    var User = '{"id":'+id+',"password":'+password+',"enabled"}'
-    var obj = JSON.parse(text); 
+    var External_user = JSON.parse('{"id":'+id+',"first_name":'+username+',"last_name":'+surname+',"password":'+password+',"year_of_birth":'+year+',"age":'+age+',"email":'+email+',"external_department":'+university+', "year_of_enrollment":'+yoe+',"current_semester":'+sem+',"app_progress":'+pro+'}') ;
 
-    xhr.open("GET","http://35.204.144.246:3000/books/" + author + "." +title+ "."+ genre + "." + price,true);
+    $.ajax({
 
-    xhr.onreadystatechange= function(){
-            if(xhr.readyState==4){
-					<!--ΑΠΟΤΕΛΕΣΜΑ-->
-                    alert(xhr.responseText);
-            }
-    };
-    xhr.send();
+        url:"/ExternalUser/addExternal",
+
+        type: 'POST',
+
+        data: External_user,             
+
+        dataType: "html",          
+
+        contentType: 'application/json',
+
+        mimeType: 'application/json',
+
+        success: function(data){ 
+
+            console.log(data);              
+
+            return false;     
+        } 
+
+    }); 
 
 });
 </script>
