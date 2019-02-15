@@ -9,4 +9,42 @@
 </footer>
 </div>
 </body>
+<script>
+
+document.getElementById('add').addEventListener('click',function(){
+    var xhr = new XMLHttpRequest();
+	//SAVE DTATA FROM FORM
+    var username = document.getElementById("username").value;// USERNAME
+    var surname = document.getElementById("surname").value;//// SURNAME
+    var id = document.getElementById("id").value;////////////// ID
+    var password = document.getElementById("password").value;// PASSWORD
+    var university = document.getElementById("u").value;/////// UNIVERSITY
+    var year = document.getElementById("year").value;////////// YEAR OF BIRTH
+    var age = document.getElementById("age").value;//////////// AGE
+    var email = document.getElementById("email").value;//////// EMAIL
+    var yoe = document.getElementById("yoe").value;//////////// YEAR OF ENROLLMENT
+    var pro = 0;/////////////////////////////////////////////// PROGRESS
+    
+    var enabled = 1;
+    
+    var d = new Date();
+    var yeartoday = d.getFullYear();
+    var sem = (yeartoday-yoe)*2-1 ;/////////////////////// SEMESTER
+    
+    var External_user = '{"username":'+username+',"surname":'+surname+',"id":'+id+',"password":'+password+',"university":'+university+',"year":'+year+',"age":'+age+',"email":'+email+', "yoe":'+yoe+', "pro":'+pro+'}' ; 
+    var User = '{"id":'+id+',"password":'+password+',"enabled"}'
+    var obj = JSON.parse(text); 
+
+    xhr.open("GET","http://35.204.144.246:3000/books/" + author + "." +title+ "."+ genre + "." + price,true);
+
+    xhr.onreadystatechange= function(){
+            if(xhr.readyState==4){
+					<!--ΑΠΟΤΕΛΕΣΜΑ-->
+                    alert(xhr.responseText);
+            }
+    };
+    xhr.send();
+
+});
+</script>
 </html>

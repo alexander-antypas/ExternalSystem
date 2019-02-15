@@ -1,7 +1,6 @@
 package gr.hua.dit.database;
 
 import java.sql.SQLException;
-import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -86,7 +85,7 @@ public class UserService {
 			session3.getTransaction().commit();
 			System.out.println("Done!");
 
-			String message = "Η ΕΓΓΡΑΦΗ ΟΛΟΚΛΗΡΩΘΗΚΕ"; 
+			String message = "Ξ— Ξ•Ξ“Ξ“Ξ΅Ξ‘Ξ¦Ξ— Ξ�Ξ›Ξ�Ξ�Ξ›Ξ—Ξ΅Ξ©Ξ�Ξ—Ξ�Ξ•"; 
 			
 			return message;
 		}
@@ -179,14 +178,14 @@ public class UserService {
 		}
 		
 		if(app_check== 0) {
-			answer="Η ΑΙΤΗΣΗ ΣΑΣ ΔΕΝ ΕΧΕΙ ΕΛΕΓΧΘΕΙ";
+			answer="Ξ— Ξ‘Ξ™Ξ¤Ξ—Ξ£Ξ— Ξ£Ξ‘Ξ£ Ξ”Ξ•Ξ� Ξ•Ξ§Ξ•Ξ™ Ξ•Ξ›Ξ•Ξ“Ξ§Ξ�Ξ•Ξ™";
 		}else {
 			if(pro == 0) {
-				answer="ΕΧΕΙ ΓΙΝΕΙ ΕΛΕΓΧΟΣ ΤΗΣ ΑΙΤΗΣΗΣ ΣΑΣ";
+				answer="Ξ•Ξ§Ξ•Ξ™ Ξ“Ξ™Ξ�Ξ•Ξ™ Ξ•Ξ›Ξ•Ξ“Ξ§Ξ�Ξ£ Ξ¤Ξ—Ξ£ Ξ‘Ξ™Ξ¤Ξ—Ξ£Ξ—Ξ£ Ξ£Ξ‘Ξ£";
 			}else if(pro == 1) {
-				answer="Η ΑΙΤΗΣΗ ΣΑΣ ΕΧΕΙ ΕΓΚΡΙΘΕΙ";
+				answer="Ξ— Ξ‘Ξ™Ξ¤Ξ—Ξ£Ξ— Ξ£Ξ‘Ξ£ Ξ•Ξ§Ξ•Ξ™ Ξ•Ξ“Ξ�Ξ΅Ξ™Ξ�Ξ•Ξ™";
 			}else if(pro == 2){
-				answer="Η ΑΙΤΗΣΗ ΣΑΣ ΕΧΕΙ ΑΠΟΡΙΦΘΕΙ";
+				answer="Ξ— Ξ‘Ξ™Ξ¤Ξ—Ξ£Ξ— Ξ£Ξ‘Ξ£ Ξ•Ξ§Ξ•Ξ™ Ξ‘Ξ Ξ�Ξ΅Ξ™Ξ¦Ξ�Ξ•Ξ™";
 			}
 		}
 		return answer;

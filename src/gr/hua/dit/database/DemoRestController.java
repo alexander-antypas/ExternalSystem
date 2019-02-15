@@ -1,7 +1,6 @@
 package gr.hua.dit.database;
 
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import gr.hua.dit.classes.Application;
 
