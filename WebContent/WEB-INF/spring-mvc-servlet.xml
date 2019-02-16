@@ -15,11 +15,11 @@
 		http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<context:component-scan
-		base-package="gr.hua.dit.api" />
+		base-package="gr.hua.dit.transfer" />
+	<context:component-scan
+		base-package="gr.hua.dit.security" />
 	<context:component-scan
 		base-package="gr.hua.dit.classes" />
-	<context:component-scan
-		base-package="gr.hua.dit.database" />
 
 	<!-- application properties file -->
 	<context:property-placeholder
@@ -76,3 +76,4 @@
 		transaction-manager="myTransactionManager" />
 
 </beans>
+

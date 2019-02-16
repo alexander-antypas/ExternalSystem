@@ -55,8 +55,6 @@ public class Servlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-	//// alekosalekosalekosalekosalekosalekosalekosalekosalekosalekos
 				/// ADD EXTERNAL_USER
 				String message_for_external = "ERROR";
 				String add_external = request.getParameter("add_external");

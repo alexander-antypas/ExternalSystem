@@ -87,7 +87,7 @@ public class UserService {
 			session3.getTransaction().commit();
 			System.out.println("Done!");
 
-			String message = "Ξ— Ξ•Ξ“Ξ“Ξ΅Ξ‘Ξ¦Ξ— Ξ�Ξ›Ξ�Ξ�Ξ›Ξ—Ξ΅Ξ©Ξ�Ξ—Ξ�Ξ•"; 
+			String message = "Η ΕΓΓΡΑΦΗ ΟΛΟΚΛΗΡΩΘΗΚΕ"; 
 			
 			return message;
 		}
@@ -97,7 +97,7 @@ public class UserService {
 		}
 		
 	}
-
+	
 	public static List<External_Department> showDepartments() {
 
 		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
@@ -180,14 +180,14 @@ public class UserService {
 		}
 		
 		if(app_check== 0) {
-			answer="Ξ— Ξ‘Ξ™Ξ¤Ξ—Ξ£Ξ— Ξ£Ξ‘Ξ£ Ξ”Ξ•Ξ� Ξ•Ξ§Ξ•Ξ™ Ξ•Ξ›Ξ•Ξ“Ξ§Ξ�Ξ•Ξ™";
+			answer="Η ΑΙΤΗΣΗ ΣΑΣ ΔΕΝ ΕΧΕΙ ΕΛΕΓΧΘΕΙ";
 		}else {
 			if(pro == 0) {
-				answer="Ξ•Ξ§Ξ•Ξ™ Ξ“Ξ™Ξ�Ξ•Ξ™ Ξ•Ξ›Ξ•Ξ“Ξ§Ξ�Ξ£ Ξ¤Ξ—Ξ£ Ξ‘Ξ™Ξ¤Ξ—Ξ£Ξ—Ξ£ Ξ£Ξ‘Ξ£";
+				answer="ΕΧΕΙ ΓΙΝΕΙ ΕΛΕΓΧΟΣ ΤΗΣ ΑΙΤΗΣΗΣ ΣΑΣ";
 			}else if(pro == 1) {
-				answer="Ξ— Ξ‘Ξ™Ξ¤Ξ—Ξ£Ξ— Ξ£Ξ‘Ξ£ Ξ•Ξ§Ξ•Ξ™ Ξ•Ξ“Ξ�Ξ΅Ξ™Ξ�Ξ•Ξ™";
+				answer="Η ΑΙΤΗΣΗ ΣΑΣ ΕΧΕΙ ΕΓΚΡΙΘΕΙ";
 			}else if(pro == 2){
-				answer="Ξ— Ξ‘Ξ™Ξ¤Ξ—Ξ£Ξ— Ξ£Ξ‘Ξ£ Ξ•Ξ§Ξ•Ξ™ Ξ‘Ξ Ξ�Ξ΅Ξ™Ξ¦Ξ�Ξ•Ξ™";
+				answer="Η ΑΙΤΗΣΗ ΣΑΣ ΕΧΕΙ ΑΠΟΡΙΦΘΕΙ";
 			}
 		}
 		return answer;
