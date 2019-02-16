@@ -15,7 +15,7 @@
 		http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<context:component-scan
-		base-package="gr.hua.dit.transfer" />
+		base-package="gr.hua.dit.database" />
 	<context:component-scan
 		base-package="gr.hua.dit.security" />
 	<context:component-scan

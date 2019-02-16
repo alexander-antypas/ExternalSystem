@@ -1,8 +1,10 @@
 package gr.hua.dit.database;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -12,12 +14,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
+import org.apache.commons.io.IOUtils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import gr.hua.dit.classes.External_User;
 import gr.hua.dit.classes.authorities;
 import gr.hua.dit.classes.user;
+import gr.hua.dit.database.DBApplication;
 import gr.hua.dit.classes.External_Department;
 
 @MultipartConfig(maxFileSize = 1699999999)
@@ -55,6 +60,47 @@ public class Servlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		// ADD APPLICATION
+				String application = request.getParameter("application");
+
+				if ("Submit".equals(application)) {
+
+					Date date = new Date();
+
+					String id = request.getParameter("user_id").toString();
+					int isChecked = 0;
+
+					byte[] familyfile = null;
+					byte[] financiallyfile = null;
+					byte[] localityfile = null;
+
+					try {
+						Part family = request.getPart("family");
+						InputStream is1 = family.getInputStream();
+						familyfile = IOUtils.toByteArray(is1);
+
+						Part financially = request.getPart("financially");
+						InputStream is2 = financially.getInputStream();
+						financiallyfile = IOUtils.toByteArray(is2);
+
+						Part locality = request.getPart("locality");
+						InputStream is3 = locality.getInputStream();
+						localityfile = IOUtils.toByteArray(is3);
+
+					} catch (IllegalStateException e) {
+						System.out.print("FILE TOO BIG!");
+						response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+					}
+
+					DBApplication.addApplication(date, id, isChecked, familyfile, financiallyfile,
+							localityfile);
+					
+					HttpSession sess = request.getSession();
+					sess.setAttribute("id", id);
+					request.getRequestDispatcher("/info_user").forward(request, response);
+				}
+		
 				/// ADD EXTERNAL_USER
 				String message_for_external = "ERROR";
 				String add_external = request.getParameter("add_external");

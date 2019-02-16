@@ -9,7 +9,7 @@
 </form>
 
 <div id="contentup">
-	<form oninput="Selector()">
+	<form action="Servlet" method="POST" enctype="multipart/form-data" oninput="Selector()">
 		<h1>ΕΓΓΡΑΦΗ ΣΤΟ ΣΥΣΤΗΜΑ</h1>
 		<label for="username">ΟΝΟΜΑ</label>
 		<br />

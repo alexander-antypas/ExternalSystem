@@ -1,4 +1,4 @@
-package gr.hua.dit.services;
+package gr.hua.dit.security;
 
 import javax.servlet.Filter;
 import javax.sql.DataSource;
