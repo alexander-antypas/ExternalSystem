@@ -16,6 +16,7 @@
 		<org.springsecurity.version>5.1.2.RELEASE</org.springsecurity.version>
 	</properties>
 
+
 	<dependencies>
 
 		<!-- Add Jackson for JSON converters -->
@@ -93,8 +94,6 @@
 			<artifactId>hibernate-c3p0</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
-
-
 
 
 		<!-- mysql jdbc -->
