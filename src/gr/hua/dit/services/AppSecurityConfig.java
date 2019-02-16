@@ -1,7 +1,8 @@
-package gr.hua.dit.api;
+package gr.hua.dit.services;
 
 import javax.servlet.Filter;
 import javax.sql.DataSource;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -10,34 +11,35 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.filter.CharacterEncodingFilter;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-@EnableWebMvc
-@ComponentScan("gr.hua.dit.api")
 @ComponentScan(basePackages = { "org.baeldung.security" })
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
-public class DemoAppConfig implements WebMvcConfigurer{
+public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 	
-
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		PasswordEncoder encoder = new BCryptPasswordEncoder();
 		return encoder;
 	}
+	/*
+	@Autowired
+	private UserDetailsService userDetailsService;*/
 	
 	@Autowired
 	private DataSource dataSource;
 
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+	@Override
+	protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
 
 		auth.jdbcAuthentication().dataSource(dataSource).passwordEncoder(passwordEncoder())
 				.usersByUsernameQuery("select username,password, enabled from user where username=?")
@@ -45,7 +47,7 @@ public class DemoAppConfig implements WebMvcConfigurer{
 	}
 
 
-
+	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
 		CharacterEncodingFilter filter = new CharacterEncodingFilter();
@@ -61,7 +63,7 @@ public class DemoAppConfig implements WebMvcConfigurer{
 		.and()
 		.formLogin()
 		.loginPage("/signin")
-		.loginProcessingUrl("/ExternalSystem/authUser")
+		.loginProcessingUrl("/authUser")
 		.defaultSuccessUrl("/definer", true)
 		.failureUrl("/denied")
 		.permitAll()
@@ -80,5 +82,10 @@ public class DemoAppConfig implements WebMvcConfigurer{
 		.disable();
 
 	}
+	
+	@Override
+	public void configure(WebSecurity web) throws Exception {
+		web.ignoring().antMatchers("/resources/**");
 
+	}
 }
