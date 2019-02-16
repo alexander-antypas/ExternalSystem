@@ -19,6 +19,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.filter.CharacterEncodingFilter;
+<<<<<<< HEAD:src/gr/hua/dit/services/AppSecurityConfig.java
+=======
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+>>>>>>> master:src/gr/hua/dit/api/DemoAppConfig.java
 
 @Configuration
 @ComponentScan(basePackages = { "org.baeldung.security" })
@@ -26,6 +32,23 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
 	
+<<<<<<< HEAD:src/gr/hua/dit/services/AppSecurityConfig.java
+=======
+
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/signin").setViewName("signin");
+        registry.addViewController("/").setViewName("signin");
+        registry.addViewController("/about").setViewName("about");
+        registry.addViewController("/access_denied").setViewName("access_denied");
+        registry.addViewController("/application").setViewName("application");
+        registry.addViewController("/help").setViewName("help");
+        registry.addViewController("/info_user").setViewName("info_user");
+        registry.addViewController("/SignUp_External").setViewName("SignUp_External");
+        registry.addViewController("/contact").setViewName("contact");
+    }
+	
+	
+>>>>>>> master:src/gr/hua/dit/api/DemoAppConfig.java
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		PasswordEncoder encoder = new BCryptPasswordEncoder();

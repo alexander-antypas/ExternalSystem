@@ -12,6 +12,11 @@
 		<hibernate.version>5.3.7.Final</hibernate.version>
 		<org.springsecurity.version>5.1.2.RELEASE</org.springsecurity.version>
 	</properties>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> master
 	<dependencies>
 
 		<!-- Add Jackson for JSON converters -->
@@ -80,8 +85,6 @@
 			<artifactId>hibernate-c3p0</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
-
-
 
 
 		<!-- mysql jdbc -->
