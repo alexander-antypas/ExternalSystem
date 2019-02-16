@@ -3,13 +3,14 @@
 	<%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="sec"%>
 	
-<div id="contentup">
-	<h2>Έχεις συμπληρώσει την αίτηση</h2>
-	
-	<form action="Servlet" method="post">
-		<input type="hidden" id="id" name="id" value="<sec:authentication property="principal.username" />">
-		<button type="submit" name="check_app" value="check_app">ΔΕΣ ΤΗΝ ΕΞΕΛΙΞΗ ΤΗΣ ΑΙΤΗΣΗΣ</button>
-	</form>
-	<h1>${message}</h1>
-	
-</div>
+
+	<div id="content1">
+		<h3>Έχεις συμπληρώσει την αίτηση</h3>
+		
+		<form action="Servlet" method="post">
+			<input type="hidden" id="id" name="id" value="<sec:authentication property="principal.username" />">
+			<button type="submit" name="check_app" value="check_app">ΔΕΣ ΤΗΝ ΕΞΕΛΙΞΗ ΤΗΣ ΑΙΤΗΣΗΣ</button>
+		</form>
+		<h3>${message}</h3>
+	</div>
+
