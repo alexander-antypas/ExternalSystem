@@ -187,7 +187,7 @@ public class UserService {
 			}else if(pro == 1) {
 				answer="Η ΑΙΤΗΣΗ ΣΑΣ ΕΧΕΙ ΕΓΚΡΙΘΕΙ";
 			}else if(pro == 2){
-				answer="Η ΑΙΤΗΣΗ ΣΑΣ ΕΧΕΙ ΑΠΟΡΙΦΘΕΙ";
+				answer="Η ΑΙΤΗΣΗ ΣΑΣ ΕΧΕΙ ΑΠΟΡΡΙΦΘΕΙ";
 			}
 		}
 		return answer;
