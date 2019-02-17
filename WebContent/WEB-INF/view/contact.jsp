@@ -22,26 +22,12 @@
 		<p>*τηλ: 210-9549400 και 2109549444</p>
 
 		<h2>&#8921; ΤΟΠΟΘΕΣΙΑ</h2>
-		<p>*Για το τμήμα της πληροφορικής και τηλεματικής: Ομηρου 9, Ταύρος </p>
-		<p>*Για τα υπόλοιπα τμήματα: Ελευθερίου Βενιζέλου 70, Καλλιθέα</p>
-		
-		<div id="googleMap" style="width:100%;height:400px;"></div>
 
-		<script>
-			function myMap() {
-			var mapProp= {
-  			center:new google.maps.LatLng(51.508742,-0.120850),
-  			zoom:5,
-			};
-			
-			var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-			}
-			var marker = new google.maps.Marker({position: myCenter});
-
-			marker.setMap(map);
-		</script>
-
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFfhFd01hPfPVRgZHpM_FWsBR2tpNiWv8&callback=myMap"></script>
-		
+		<p>*Για το τμήμα της πληροφορικής και τηλεματικής: Ομηρου 9, Ταύρος.</p>
+		<a href="https://www.google.com/maps/place/%CE%A7%CE%B1%CF%81%CE%BF%CE%BA%CF%8C%CF%80%CE%B5%CE%B9%CE%BF+%CE%A0%CE%B1%CE%BD%CE%B5%CF%80%CE%B9%CF%83%CF%84%CE%AE%CE%BC%CE%B9%CE%BF/@37.9622138,23.7002599,19z/data=!3m1!4b1!4m5!3m4!1s0x14a1bcf701eb1cff:0x4430faa70bdccbc!8m2!3d37.9622138!4d23.7008069">(δες στον χάρτη)</a>
+		<br /><br />
+		<p>*Για τα υπόλοιπα τμήματα: Ελευθερίου Βενιζέλου 70, Καλλιθέα.</p>
+		<a href="https://www.google.com/maps/place/%CE%A7%CE%B1%CF%81%CE%BF%CE%BA%CF%8C%CF%80%CE%B5%CE%B9%CE%BF+%CE%A0%CE%B1%CE%BD%CE%B5%CF%80%CE%B9%CF%83%CF%84%CE%AE%CE%BC%CE%B9%CE%BF/@37.9550923,23.697829,15z/data=!4m5!3m4!1s0x14a1bcf93dea0b05:0x2f890695cd7e38e1!8m2!3d37.9610454!4d23.708995">(δες στον χάρτη)</a> 
+		<br /><br />		
 		 
 	</div>
