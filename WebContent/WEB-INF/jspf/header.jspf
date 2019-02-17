@@ -60,6 +60,12 @@ header h1 {
 	display: none;
 }
 
+#help{
+	color: #ffffff;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 #forma {
 	display: none;
 }
@@ -96,9 +102,7 @@ a:active {
 	margin-left: auto;
 	margin-right: auto;
 	width: 20%;
-	display
-	=
-	block;
+	display : block;
 }
 
 #contentup {
@@ -106,9 +110,7 @@ a:active {
 	margin-left: auto;
 	margin-right: auto;
 	width: 50%;
-	display
-	=
-	block;
+	display:block;
 }
 
 ul {
@@ -190,6 +192,8 @@ footer {
 }
 </style>
 <style>
+
+
 .bar {
 	background-color: #666;
 }
@@ -234,7 +238,6 @@ footer {
 }
 
 .page {
-	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
 }

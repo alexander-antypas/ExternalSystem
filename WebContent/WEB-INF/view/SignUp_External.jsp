@@ -4,7 +4,7 @@
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<form action="/Transfer/definer" method="get">
+<form action="/ExternalSystem/definer" method="get">
 	<button>ΠΙΣΩ</button>
 </form>
 
