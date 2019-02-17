@@ -24,6 +24,7 @@
 		<h2>&#8921; ΤΟΠΟΘΕΣΙΑ</h2>
 		<p>*Για το τμήμα της πληροφορικής και τηλεματικής: Ομηρου 9, Ταύρος </p>
 		<p>*Για τα υπόλοιπα τμήματα: Ελευθερίου Βενιζέλου 70, Καλλιθέα</p>
+		
 		<div id="googleMap" style="width:100%;height:400px;"></div>
 
 		<script>
@@ -36,15 +37,11 @@
 			var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 			}
 			var marker = new google.maps.Marker({position: myCenter});
-			var marker = new google.maps.Marker({
-				  position:myCenter,
-				  animation:google.maps.Animation.BOUNCE
-				});
 
 			marker.setMap(map);
 		</script>
 
-		<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp-toMhPfKuMl__r4ABBKpBWM_YdRwGCI&callback=myMap"></script> -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFfhFd01hPfPVRgZHpM_FWsBR2tpNiWv8&callback=myMap"></script>
 		
 		 
 	</div>
